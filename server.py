@@ -114,6 +114,7 @@ def handle_reviews():
         return jsonify({'message': 'Review added successfully'})
 
 @app.route('/reviews/<int:review_id>/reply', methods=['POST'])
+@cross_origin()
 def add_reply(review_id):
     data = request.json
     reply_content = data.get('reply_content')
